@@ -2,11 +2,11 @@ import { useNavigate } from "react-router";
 
 const NavBar = () => {
   return (
-    <div className=" mb-4 flex h-[105px] w-[500px] items-center gap-4 bg-element">
+    <div className=" mb-4 flex h-[105px] w-[500px] cursor-pointer items-center gap-4 bg-element">
       nav
       <Button name="home" to="/home" />
       <Button name="other" to="/other" />
-      <Button name="/" to="/" />
+      <Button name="itemsList" to="/itemsList" />
     </div>
   );
 };
@@ -20,7 +20,7 @@ const Button = ({ name, to }: buttonProps) => {
     <div
       className="h-[50%] w-[100px] bg-background"
       onClick={() => {
-        navigate({ pathname: to, search: location.search });
+        navigate({ pathname: to, search: window.location.search });
       }}
     >
       to {name}

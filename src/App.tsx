@@ -8,6 +8,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import NavBar from "./Component/NavBar";
+import ItemList from "./Component/ItemList";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/other" element={<OtherPage />} />
+          <Route path="/itemsList" element={<ItemList />} />
           <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
       </div>
