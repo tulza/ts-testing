@@ -1,9 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router";
 
 const NavBar = () => {
-  const searchParams = new URLSearchParams(window.location.search);
-  console.log(searchParams);
   return (
     <div className=" mb-4 flex h-[105px] w-[500px] items-center gap-4 bg-element">
       nav
@@ -23,7 +20,7 @@ const Button = ({ name, to }: buttonProps) => {
     <div
       className="h-[50%] w-[100px] bg-background"
       onClick={() => {
-        navigate({ pathname: to, search: "wa" });
+        navigate({ pathname: to, search: location.search });
       }}
     >
       to {name}
