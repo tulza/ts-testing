@@ -20,7 +20,7 @@ const Button = ({ name, to }: buttonProps) => {
     <div
       className="h-[50%] w-[100px] bg-background"
       onClick={() => {
-        navigate({ pathname: to, search: window.location.search });
+        navigate({ pathname: to });
       }}
     >
       to {name}

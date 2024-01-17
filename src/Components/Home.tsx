@@ -7,7 +7,7 @@ const Home = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchTerm = searchParams.get(term) || "";
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const otherParams: any = Object.fromEntries(
       new URLSearchParams(location.search),
     );

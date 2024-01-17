@@ -12,6 +12,14 @@
   --gray: #212425;
 }
 
+html[data-theme="cold"] {
+  --background: #040d12;
+  --element: #262527;
+  --accent: #5c8374;
+  --text2: #d8d9da;
+  --text: white;
+}
+
 html {
   background-color: var(--background);
   color: var(--text);
