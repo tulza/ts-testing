@@ -14,6 +14,7 @@ export default {
     extend: {
       colors: {
         element: "var(--element)",
+        element2: "var(--element2)",
         background: "var(--background)",
         text: "var(--text)",
         text2: "var(--text2)",

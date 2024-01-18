@@ -58,7 +58,7 @@ const NavButton = ({ text, set }: ButtonProps) => {
   };
   return (
     <div
-      className="button cursor-pointer bg-background p-4 px-8"
+      className="button cursor-pointer select-none bg-background p-4 px-8"
       onMouseEnter={handleHover}
     >
       {text}

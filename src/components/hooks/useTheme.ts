@@ -6,7 +6,7 @@ const useTheme = () => {
     document.documentElement.setAttribute("data-theme", currTheme);
   }, [currTheme]);
 
-  return [currTheme, setTheme] as const;
+  return [setTheme] as const;
 };
 
 export default useTheme;

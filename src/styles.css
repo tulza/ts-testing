@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply transition-colors duration-500;
+}
+
 :root {
   --element: hsl(209, 23%, 22%);
+  --element2: hsl(208, 19%, 31%);
   --background: var(--gray);
   --text: hsl(0, 0%, 100%);
 
@@ -19,6 +24,14 @@ html[data-theme="cold"] {
   --accent: #5c8374;
   --text2: #d8d9da;
   --text: white;
+}
+
+html[data-theme="light-mode"] {
+  --background: white;
+  --element: #262527;
+  --accent: #5c8374;
+  --text2: #d8d9da;
+  --text: #d8d9da;
 }
 
 html {
