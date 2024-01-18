@@ -11,7 +11,8 @@
       "@components/*": ["./src/components/*"],
       "@data/*": ["./src/components/data/*"],
       "@hooks/*": ["./src/components/hooks/*"],
-      "@entities/*": ["./src/components/entities/*"]
+      "@entities/*": ["./src/components/entities/*"],
+      "@variants/*": ["./src/components/framer/variants/*"]
     },
 
     /* Bundler mode */

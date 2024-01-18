@@ -1,17 +1,18 @@
 import clsx from "clsx";
-import useNavHoverBar from "./hooks/useNavHover";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useState } from "react";
 
 type NavBarProps = {
   className?: string;
 };
 
 const NavigationBar = ({ className }: NavBarProps) => {
-  const [bar] = useNavHoverBar();
-  useEffect(() => {
-    console.log(bar.width);
-  }, [bar]);
+  const [bar, setBar] = useState({
+    width: 0,
+    offsetX: 0,
+  });
+  const [isHovering, setHover] = useState<boolean>(false);
+
   return (
     <div
       className={clsx(
@@ -19,16 +20,23 @@ const NavigationBar = ({ className }: NavBarProps) => {
         "flex h-20 w-full items-center justify-center bg-element",
       )}
     >
-      <div className="relative flex gap-4">
-        <Button text="these" />
-        <Button text="are" />
-        <Button text="buttons" />
+      <div
+        className="relative flex gap-4"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <Button set={setBar} text="these" />
+        <Button set={setBar} text="are" />
+        <Button set={setBar} text="buttons" />
         <motion.div
-          className="absolute bottom-0 z-10 h-1 bg-white"
-          animate={{ width: bar.width }}
-        >
-          dsds
-        </motion.div>
+          className="absolute bottom-0 z-10 h-0.5 rounded-full bg-white"
+          animate={{
+            width: bar.width,
+            left: bar.offsetX,
+            opacity: isHovering ? 1 : 0,
+          }}
+          transition={{ duration: 0.2 }}
+        />
       </div>
     </div>
   );
@@ -36,14 +44,17 @@ const NavigationBar = ({ className }: NavBarProps) => {
 
 type ButtonProps = {
   text: string;
+  set: React.Dispatch<React.SetStateAction<{ width: number; offsetX: number }>>;
 };
-const Button = ({ text }: ButtonProps) => {
-  const [, setBar] = useNavHoverBar();
-  const handleHover = (e: any) => {
-    setBar({ width: e.target.offsetWidth, offsetx: e.target });
+const Button = ({ text, set }: ButtonProps) => {
+  const handleHover = (event: any) => {
+    set({ width: event.target.offsetWidth, offsetX: event.target.offsetLeft });
   };
   return (
-    <div className="bg-background p-4 px-8" onMouseEnter={handleHover}>
+    <div
+      className="button cursor-pointer bg-background p-4 px-8"
+      onMouseEnter={handleHover}
+    >
       {text}
     </div>
   );
