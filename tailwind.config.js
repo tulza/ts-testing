@@ -16,6 +16,7 @@ export default {
         element: "var(--element)",
         background: "var(--background)",
         text: "var(--text)",
+        text2: "var(--text2)",
 
         black: "var(--black)",
         gray: "var(--gray)",

@@ -10,6 +10,7 @@
   --white: #ffffff;
   --black: #1c1e1f;
   --gray: #212425;
+  --text2: #d8d9da;
 }
 
 html[data-theme="cold"] {

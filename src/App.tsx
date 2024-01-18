@@ -1,5 +1,6 @@
+import Test from "./Components/Test.test";
+import { Home } from "./Components";
 import OtherPage from "./OtherPage";
-import Home from "./Components/Home";
 import "./styles.css";
 import {
   HashRouter as Router,
@@ -7,23 +8,18 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import ItemList from "./Components/ItemList";
-// import Test from "./Component/Test.test";
-import Test from "./Components/Test.test";
 
 function App() {
   return (
     <Router>
-      <div className="m-10">
-        {/* <NavBar /> */}
-        <Routes>
-          <Route path="/home" element={<Home />} />
+      {/* <NavBar /> */}
+      <Routes>
+        {/* <Route path="/home" element={<Home />} />
           <Route path="/other" element={<OtherPage />} />
-          <Route path="/itemsList" element={<ItemList />} />
-          <Route path="/test" element={<Test />} />
-          <Route path="/" element={<Navigate to="/test" />} />
-        </Routes>
-      </div>
+          <Route path="/test" element={<Test />} />*/}
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
     </Router>
   );
 }
