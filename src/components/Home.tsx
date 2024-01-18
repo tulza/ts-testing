@@ -1,6 +1,6 @@
 import NavigationBar from "@components/NavigationBar";
 import Card from "@components/Card";
-import { posts } from "@components/data/posts";
+import { posts } from "@/data/posts";
 const Home = () => {
   return (
     <>

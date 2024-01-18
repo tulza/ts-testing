@@ -9,7 +9,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@data/*": ["./src/components/data/*"],
+      "@data/*": ["src/data/*"],
       "@hooks/*": ["./src/components/hooks/*"],
       "@entities/*": ["./src/components/entities/*"],
       "@variants/*": ["./src/components/framer/variants/*"]
