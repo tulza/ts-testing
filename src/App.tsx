@@ -1,6 +1,4 @@
-import Test from "./Components/Test.test";
-import { Home } from "./Components";
-import OtherPage from "./OtherPage";
+import Home from "@/components/Home";
 import "./styles.css";
 import {
   HashRouter as Router,
@@ -14,9 +12,6 @@ function App() {
     <Router>
       {/* <NavBar /> */}
       <Routes>
-        {/* <Route path="/home" element={<Home />} />
-          <Route path="/other" element={<OtherPage />} />
-          <Route path="/test" element={<Test />} />*/}
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
       </Routes>
